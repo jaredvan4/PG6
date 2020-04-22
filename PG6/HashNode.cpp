@@ -40,14 +40,18 @@ string HashNode::getd() { return d; }
 DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 	if (k == key) {
 		DRT* temp = new DRT(this->getd(), "", "");
+		//if I have don't have a next
 		if (!next) {
-			if (p != nullptr) {
-				p->setnext(nullptr);
-			}
-				delete this;
-				return temp;
+			listhead = nullptr;
+			delete this;
+			return temp;
 		}
-
+		else {
+			listhead = next;
+			delete this;	
+			return temp;
+		}
+		
 	}
 	else {
 		next->remove(key, this, listhead);

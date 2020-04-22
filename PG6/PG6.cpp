@@ -71,7 +71,7 @@ void LookupCommand(string cmd) {
 	string k = cmd.substr(q1 + 1, q2 - q1 - 1);
 	DRT* R = Studs->search(k);
 	if (R->getdata() == "") {
-		cout << k << "does not exist!\n "<< endl;
+		cout << k << " does not exist!\n "<< endl;
 	}
 	else {
 		cout << "Number of copies: " << R->getdata() << endl;
