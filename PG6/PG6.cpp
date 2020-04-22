@@ -74,6 +74,6 @@ void LookupCommand(string cmd) {
 		cout << k << " does not exist!\n "<< endl;
 	}
 	else {
-		cout << "Number of copies: " << R->getdata() << endl;
+		cout << "Name: " << k << "       Number of copies:"<< R->getdata() << endl;
 	}
 }
