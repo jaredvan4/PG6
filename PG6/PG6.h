@@ -1,3 +1,5 @@
+//Jared VanEnkevort
+//Contains prototpyes for all methods present in PG6.cpp
 #ifndef _PG6_
 #define _PG6_
 
