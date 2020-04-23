@@ -1,3 +1,5 @@
+//Jared VanEnkevort
+//Contains definitions for all methods in HashNode.h
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -15,14 +17,14 @@ HashNode::~HashNode() { //destructor
 	delete next;
 }
 
-
+//if this is node, return else tell next node to search
 DRT* HashNode::searchnode(string key) {
 
 	if (k == key) return new DRT(d, "", "");
 	if (!next) return new DRT("", "", "");
 	return next->searchnode(key);
 }
-
+//if this is the key, increment else send add to next node
 DRT* HashNode::addnode(string key, string data) {
 	if (k == key) {
 		DRT* temp = new DRT(d, "", "");
@@ -36,7 +38,7 @@ DRT* HashNode::addnode(string key, string data) {
 
 string HashNode::getk() { return k; }
 string HashNode::getd() { return d; }
-
+//if this is key handle removing, else tell next node to remove
 DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 	if (k == key) {
 		DRT* temp = new DRT(this->getd(), "", "");
@@ -58,6 +60,6 @@ DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 	}
 }
 
-
+//sets my next
 void HashNode::setnext(HashNode* p) { next = p; }
 
