@@ -43,21 +43,27 @@ string HashNode::getd() { return d; }
 DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 	if (k == key) {
 		DRT* temp = new DRT(this->getd(), "", "");
-		//if I have don't have a next
-		if (!next) {
-			listhead = nullptr;
-			delete this;
-			return temp;
+		//if I'm head
+		if (p == nullptr) {
+			if(next){
+			 listhead = next;
+			 next->setnext(nullptr);
+			 delete this;
+			 return temp;
+			}else{
+			  listhead = nullptr;
+			  return temp;
+			}
 		}
 		else {
-			listhead = next;
-			delete this;	
+			p->setnext(nullptr);
+			delete this;
 			return temp;
 		}
 		
 	}
 	else {
-		 return next->remove(key, nullptr, listhead);
+		 return next->remove(key, this, listhead);
 	}
 }
 
