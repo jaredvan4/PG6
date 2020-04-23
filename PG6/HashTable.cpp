@@ -1,3 +1,5 @@
+//Jared VanEnkevort
+//Contains definitions for all methods in HashTable.h
 #include <iostream>
 #include <string>
 #include <cstdlib>
