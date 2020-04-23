@@ -37,12 +37,12 @@ int HashTable::hf(string key) {
 DRT* HashTable::add(string key, string data) { //very similar to sample code
 	int val = hf(key);
 	if (table[val] == nullptr) {
-		DRT *temp = new DRT("", "", "");
-		table[val] = new HashNode(key,data);
+		DRT* temp = new DRT("", "", "");
+		table[val] = new HashNode(key, data);
 		return temp;
 	}
 	else {
-		
+
 		return table[val]->addnode(key, data);
 	}
 
@@ -61,7 +61,7 @@ DRT* HashTable::remove(string key) { //removes an item from the list
 	if (!table[val]) {
 		return new DRT("", "", "");
 	}
-	return table[val]->remove(key, nullptr,table[val]);
+	return table[val]->remove(key, nullptr, table[val]);
 }
 
 DRT* HashTable::search(string key) { //Database search method

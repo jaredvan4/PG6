@@ -30,9 +30,10 @@ DRT* HashNode::addnode(string key, string data) {
 		DRT* temp = new DRT(d, "", "");
 		d = data;
 		return temp;
-	}
-	else if (next) {
-		next->addnode(key, data);
+	}else {
+		next = new HashNode(key,"");
+		next->setnext(nullptr);
+		return new DRT("", "", "");
 	}
 }
 
