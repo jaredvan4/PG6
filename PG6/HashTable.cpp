@@ -7,7 +7,7 @@
 #include "DRT.h"
 #include "HashNode.h"
 using namespace std;
-
+//constructor
 HashTable::HashTable(int sz) {
 
 	HS = sz;
@@ -15,14 +15,14 @@ HashTable::HashTable(int sz) {
 	for (int i = 0; i < HS; i++)
 		table[i] = NULL;
 }
-
+//destructor
 HashTable::~HashTable() {
 
 	for (int i = 0; i < HS; i++)
 		delete table[i];
 	delete[] table;
 }
-
+//hashing function
 int HashTable::hf(string key) {
 
 	int val = 0;
@@ -33,7 +33,7 @@ int HashTable::hf(string key) {
 	}
 	return val;
 }
-
+//adds a hashnode to the table
 DRT* HashTable::add(string key, string data) { //very similar to sample code
 	int val = hf(key);
 	if (table[val] == nullptr) {

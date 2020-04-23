@@ -6,7 +6,7 @@
 #include "HashNode.h"
 #include "DRT.h"
 using namespace std;
-
+//constructor
 HashNode::HashNode(string key, string data) {
 
 	k = key; d = data; next = NULL;
