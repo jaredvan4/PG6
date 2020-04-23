@@ -46,6 +46,7 @@ DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 		DRT* temp = new DRT(this->getd(), "", "");
 		//if I'm head
 		if (p == nullptr) {
+			//if I have a next
 			if (next) {
 				listhead = next;
 				delete this;
@@ -53,14 +54,24 @@ DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 			}
 			else {
 				listhead = nullptr;
+				delete this;
 				return temp;
 			}
 		}
 		//if I'm not head
 		else {
-			p->setnext(nullptr);
-			delete this;
-			return temp;
+			//if I have a next
+			if (next) {
+				p->setnext(next);
+				delete this;
+				return temp;
+			}
+			else {
+				p->setnext(nullptr);
+				delete this;
+				return temp;
+			}
+
 		}
 
 	}
