@@ -30,8 +30,9 @@ DRT* HashNode::addnode(string key, string data) {
 		DRT* temp = new DRT(d, "", "");
 		d = data;
 		return temp;
-	}else {
-		next = new HashNode(key,"");
+	}
+	else {
+		next = new HashNode(key, "");
 		next->setnext(nullptr);
 		return new DRT("", "", "");
 	}
@@ -45,25 +46,26 @@ DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 		DRT* temp = new DRT(this->getd(), "", "");
 		//if I'm head
 		if (p == nullptr) {
-			if(next){
-			 listhead = next;
-			 next->setnext(nullptr);
-			 delete this;
-			 return temp;
-			}else{
-			  listhead = nullptr;
-			  return temp;
+			if (next) {
+				listhead = next;
+				delete this;
+				return temp;
+			}
+			else {
+				listhead = nullptr;
+				return temp;
 			}
 		}
+		//if I'm not head
 		else {
 			p->setnext(nullptr);
 			delete this;
 			return temp;
 		}
-		
+
 	}
 	else {
-		 return next->remove(key, this, listhead);
+		return next->remove(key, this, listhead);
 	}
 }
 
