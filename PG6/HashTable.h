@@ -1,3 +1,5 @@
+//Jared VanEnkevort
+//Contains prototpyes for all methods present in HashTable.cpp
 #ifndef _HASHTABLE_
 #define _HASHTABLE_
 
