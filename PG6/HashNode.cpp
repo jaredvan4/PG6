@@ -57,7 +57,7 @@ DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 		
 	}
 	else {
-		next->remove(key, this, listhead);
+		 return next->remove(key, nullptr, listhead);
 	}
 }
 
