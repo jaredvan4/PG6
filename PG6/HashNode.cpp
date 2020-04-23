@@ -35,7 +35,7 @@ DRT* HashNode::addnode(string key, string data) {
 	else if (next) {
 		return next->addnode(key, data);
 	}else{
-		next = new HashNode(key, "");
+		next = new HashNode(key, data);
 		next->setnext(nullptr);
 		return new DRT("", "", "");
 	}
