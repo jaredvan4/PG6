@@ -1,3 +1,5 @@
+//Jared VanEnkevort
+//Contains prototpyes for all methods present in HashNode.cpp
 #ifndef _HASHNODE_
 #define _HASHNODE_
 
