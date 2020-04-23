@@ -1,3 +1,6 @@
+//Jared VanEnkevort
+//Contains definitions for all methods in PG6.h
+//Contains the main method we enter and exit from
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -12,7 +15,7 @@ int main(int argc, char** argv) {
 	delete Studs;
 	return 0;
 }
-
+//handles figuring out what command is sent
 bool ProcessCommand() {
 	string cmd;
 	getline(cin, cmd);
@@ -23,7 +26,7 @@ bool ProcessCommand() {
 	else cout << "Invalid Command!" << endl;
 	return true;
 }
-
+//handles add command
 void AddCommand(string cmd) {
 	int q1, q2;
 	for (q1 = 0; cmd[q1] != '\"'; q1++);
@@ -40,7 +43,7 @@ void AddCommand(string cmd) {
 		cout << "one copy of " << k << " has been added to the library!" << endl;
 	}
 }
-
+//handles remove command
 void RemoveCommand(string cmd) {
 	int q1, q2;
 	for (q1 = 0; cmd[q1] != '\"'; q1++);
