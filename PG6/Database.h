@@ -1,3 +1,5 @@
+//Jared VanEkevort
+//Base class containing the method prototypes for the inheriting classes
 #ifndef _DATABASE_
 #define _DATABASE_
 
