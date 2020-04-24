@@ -81,7 +81,15 @@ DRT* HashNode::remove(string key, HashNode* p, HashNode*& listhead) {
 
 	}
 	else {
-		return next->remove(key, this, listhead);
+		if (!next) {
+			//if the node doesn't exist in this list
+			return new DRT("", "", "");
+		}
+		else {
+			//else tell the next node to remove
+			return next->remove(key, this, listhead);
+		}
+		
 	}
 }
 
